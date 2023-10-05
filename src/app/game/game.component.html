@@ -1,0 +1,21 @@
+<div class="gameContainer">
+  <div>
+    <app-musicPlayer [songs]="songList" class="musicPlayer"></app-musicPlayer>
+    <div *ngIf="isAnswerCorrect">You're correct!</div>
+    <div *ngIf="isAnswerCorrect === false && chanceCounter === 1">You're wrong!</div>
+    <div *ngIf="isAnswerCorrect === false && chanceCounter === 2">Wrong Again!</div>
+    <a routerLink="/game-setup">
+      <button *ngIf="isPlayAgain">Play Again</button>
+    </a>
+    <a routerLink="/">
+      <button *ngIf="isPlayAgain">Go Home</button>
+    </a>
+  </div>
+  <app-artistSelections
+    [allArtists]="artistList"
+    [correctArtist]="correctArtist"
+    [isDisabled]="isPlayAgain"
+    (userSelect)="userArtistSelection($event)"
+    class="multipleChoice"
+  ></app-artistSelections>
+</div>

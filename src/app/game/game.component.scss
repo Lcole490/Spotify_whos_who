@@ -1,0 +1,21 @@
+.gameContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  text-transform: capitalize;
+
+}
+
+.musicPlayer,
+.multipleChoice{
+  flex: 1;
+  margin: 10px;
+}
+
+.mat-paginator-range-label {
+  color: black;
+}
+
+

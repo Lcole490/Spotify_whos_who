@@ -1,0 +1,6 @@
+<div *ngFor="let artist of allArtists" class="artist-container">
+  <button [disabled]="isDisabled" (click)="onUserSelection(artist.artists[0].name)" class="choice">
+    <img src="{{ artist.artists[0].images[0].url }} " />
+    <span>{{ artist.artists[0].name }}</span>
+  </button>
+</div>

@@ -1,0 +1,179 @@
+@import '../../styles/global-styles.scss';
+@import '../../styles/_variables.scss';
+@import '../../styles/_mixins.scss';
+
+.gamesetup-container {
+  color: white;
+  border: solid lime 2px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  letter-spacing: 2px;
+  text-align: center;
+
+  h1 {
+    text-align: center;
+    font-size: 75px;
+    margin: 0;
+  }
+
+
+
+  &_instructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+
+    h2 {
+      text-decoration: underline;
+      text-decoration-color: $orange;
+      text-underline-offset: 15px;
+    }
+
+    figure {
+      text-align: center;
+      width: 75%;
+      margin: 0;
+      ul {
+        padding: 0;
+        margin-bottom: 0;
+
+        li {
+          list-style-type: none;
+        }
+      }
+    }
+  }
+
+  &_selections {
+    width: fit-content;
+
+    display: flex;
+    flex-direction:column;
+
+
+    .selection {
+      margin-bottom: 20px;
+      height: fit-content;
+      text-align: center;
+      width: fit-content;
+      @include flex-row-center;
+      
+      
+      &-choices, &-title {
+        margin-right: 5px;
+        height: 8vh;
+        width: 212px;
+      }
+
+      &-choices {
+        height: 8vh;
+        font-size: 8vh;
+        line-height: 8vh;
+      }
+
+      &-title {
+        @include flex-row-center;
+        
+        font-size: 3vh;
+        border-radius: 10px;
+      }
+
+      &-title.purple {
+        background-color: $purple;
+      }
+
+      &-title.pink {
+        background-color: $pink;
+      }
+
+      button {
+        font-size: 36px;
+        height: 8vh;
+        border-radius: 10px;
+
+        width: 8vw;
+        @include flex-row-center;
+
+        &:first-of-type {
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .genres {
+      height: 100%;
+      
+      .select {
+        width: 100%;
+
+        &-genre {
+          border: solid $yellow 5px;
+          border-bottom: none;
+          font-size: 5vh;
+          text-transform: capitalize;
+
+          &:first-of-type {
+            border-top: none;
+          }
+
+          &-title {
+            border: solid $yellow 5px;
+            font-size: 5vh;
+            text-transform: capitalize;
+            margin: none;
+            position: relative;
+
+            img {
+              position: absolute;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              margin: auto 0;
+              right: 15px;
+              transform: rotate(180deg);
+            }
+          }
+  
+          &-container {
+            height: 15vh;
+            margin-top: 20px;
+            max-height: 100%;
+            overflow-y:scroll;
+            overflow-x: hidden;
+            border-top:solid $yellow 5px;
+            border-bottom: solid $yellow 5px;
+
+            &::-webkit-scrollbar {
+              width: 20px;
+              background-color: black;
+              border-top: solid $yellow 5px;
+              border-right: solid $yellow 5px;
+              border-bottom: solid $yellow 5px;
+              border-left: none;
+            }
+
+            &::-webkit-scrollbar-thumb {
+              height: 20px;
+              width: 100%;
+              background-color: $yellow;
+            }
+          }
+          
+        }
+      }
+    }
+  }
+
+  a {
+    button {
+      margin-top: 25px;
+      background-color: $blue;
+      width: 200px;
+    }
+  }
+}
+
+

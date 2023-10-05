@@ -1,0 +1,77 @@
+<div class="gamesetup-container">
+  <h1>Who's Who</h1>
+  <div class="gamesetup-container_instructions">
+    <h2>Rules of the Game</h2>
+    <figure>
+      <figcaption>Can you Guess Who The Artist Is?</figcaption>
+      <ul>
+        <li>Pick the Number of Songs From the Artist</li>
+        <li>
+          Pick How Many Multiple Choice Options => [ (A, B) (A, B, C) or (A, B,
+          C, D) ]
+        </li>
+        <li>Pick the Genre (From Over 50 Options)</li>
+      </ul>
+    </figure>
+    <p>The Game Starts when you are Ready to Rock...</p>
+  </div>
+
+  <div class="gamesetup-container_selections">
+    <div class="selection">
+      <span class="selection-title purple"> Number of Songs </span>
+
+      <span class="selection-choices" id="numOfSongs">{{
+        numberOfSongsCounter
+      }}</span>
+
+      <button (click)="incrementCounterSongs()">+</button>
+      <!-- &nbsp;&nbsp; -->
+      <button (click)="decrementCounterSongs()">-</button>
+    </div>
+    <div class="selection">
+      <span class="selection-title pink">Number of Choices</span>
+      <span class="selection-choices" id="numOfChoices">
+        {{ numberOfArtistsCounter }}
+      </span>
+
+      <button (click)="incrementCounterArtists()">+</button>
+      <!-- &nbsp;&nbsp; -->
+
+      <button (click)="decrementCounterArtists()">-</button>
+    </div>
+
+    <div *ngIf="authLoading || configLoading">Loading...</div>
+    <div *ngIf="!authLoading && !configLoading" class="genres">
+      <!-- <select [(ngModel)]="selectedGenre" (ngModelChange)="setGenre($event)">
+      <option [value]="">Genre</option>
+      <option [value]="genre" *ngFor="let genre of genres">
+        {{ genre }}
+      </option>
+    </select> -->
+
+      <div class="select" (click)="showGenres()">
+        <div class="select-genre-title">{{selectedGenreText}}
+        <img src="../../assets/arrow.svg" alt="arrow" />
+        </div>
+        <div *ngIf="showElement" class="select-genre-container">
+          <div
+            class="select-genre"
+            *ngFor="let genre of genres"
+            (click)="setGenre($event)"
+          >
+            {{ genre }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a routerLink="/game" routerLinkActive="active" ariaCurrentWhenActive="page">
+    <button *ngIf="!showElement" class="button" (click)="initializeGame()">Ready to Rock!</button>
+  </a>
+
+  <!-- 
+  we have our values 
+  - onclick save variables >> create a data service to send data to game
+  - route to game page
+  - call to main game method to set up game >> this is where fetch calls live 
+--></div>

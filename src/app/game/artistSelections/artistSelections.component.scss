@@ -1,0 +1,20 @@
+.artist-container {
+  border: solid purple 1px;
+}
+
+.choice{
+  padding: 30px 30px 30px 30px;
+  border: 5px solid purple;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+    img {
+      height: 300px;
+      width: 300px;
+    }
+
+}
+
+.choice:hover{
+  cursor: pointer;
+}
